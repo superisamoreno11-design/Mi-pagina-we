@@ -1,128 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cartita 💌</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Un correo para ti 💖</title>
 
-<style>
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-  margin: 0;
-  text-align: center;
-  color: #333;
-}
+  <!-- Fuente cursiva tipo carta -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-/* Pantallas */
-.screen {
-  display: none;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+  <style>
 
-.screen.active {
-  display: flex;
-}
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: #333;
+      padding: 15px;
+    }
 
-/* Imagen */
-.main-img {
-  width: 200px;
-  max-width: 80%;
-  margin-top: 20px;
-  cursor: pointer;
-}
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.4em;
+    }
 
-/* Carta */
-.card {
-  background: #fff0f5;
-  padding: 25px;
-  border-radius: 15px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
+    .screen {
+      display: none;
+      animation: fadeIn 0.6s ease;
+      width: 100%;
+      max-width: 500px;
+    }
 
-.card h3 {
-  font-size: 1.8em;
-}
+    .active {
+      display: block;
+    }
 
-.card p {
-  font-size: 1.2em;
-  line-height: 1.5;
-}
+    .main-img {
+      width: 220px;
+      max-width: 80%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-/* Botón */
-.return-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1em;
-  border: none;
-  border-radius: 10px;
-  background-color: #ff69b4;
-  color: white;
-  cursor: pointer;
-}
-</style>
+    .main-img:hover {
+      transform: scale(1.05);
+    }
 
+    .main-img:active {
+      transform: scale(0.95);
+    }
+
+    /* Carta */
+    .card {
+      background: repeating-linear-gradient(
+        white,
+        white 28px,
+        #eaeaea 29px
+      );
+      padding: 25px;
+      border: 1px solid #ddd;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: left;
+      animation: fadeIn 1s ease;
+    }
+
+    .card h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5em;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    .return-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background: #ff4f81;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .return-btn:hover {
+      background: #ff2a66;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
 </head>
 <body>
 
-<div class="screen active" id="screen1" onclick="nextScreen(2)">
-  <h2>Holii, te llegó un correo</h2>
-  <img src="https://acortar.link/XPC32D" class="main-img">
-</div>
+  <div class="screen active" id="screen1">
+    <h2>Holii, te llegó un correo 💌</h2>
+    <img src="https://acortar.link/XPC32D" class="main-img" onclick="nextScreen(2)">
+  </div>
 
-<div class="screen" id="screen2" onclick="nextScreen(3)">
-  <h2>Una cartita para ti mi solecito</h2>
-  <img src="https://acortar.link/BgOep0" class="main-img">
-</div>
+  <div class="screen" id="screen2">
+    <h2>Una cartita para ti mi solecito ☀️</h2>
+    <img src="https://acortar.link/BgOep0" class="main-img" onclick="nextScreen(3)">
+  </div>
 
-<div class="screen" id="screen3" onclick="nextScreen(4)">
-  <h2>¡Ábrela!</h2>
-  <img src="https://acortar.link/IieZ60" class="main-img">
-</div>
+  <div class="screen" id="screen3">
+    <h2>Ábrela 💖</h2>
+    <img src="https://acortar.link/IieZ60" class="main-img" onclick="nextScreen(4)">
+  </div>
 
-<div class="screen" id="screen4" onclick="nextScreen(5)">
-  <h2>¿Qué dirá?</h2>
-  <img src="https://acortar.link/ylGOP0" class="main-img">
-</div>
+  <div class="screen" id="screen4">
+    <h2>¿Qué dirá? 👀</h2>
+    <img src="https://acortar.link/ylGOP0" class="main-img" onclick="nextScreen(5)">
+  </div>
 
-<div class="screen" id="screen5">
-  <div class="card">
-    <h3>💖Mi solecito💖</h3>
+  <div class="screen" id="screen5">
 
-    <p>
+    <div class="card">
+
+      <h3>💖Mi solecito💖</h3>
+
+      <p>
       Hay algo en vos que me transmite calma, cómo me haces reír
-      incluso cuando no tengo ganas, y esa felicidad
-      que me das sin siquiera intentarlo, solo siendo vos.
+      incluso cuando no tengo ganas, y esa felicidad que me das
+      sin siquiera intentarlo, solo siendo vos.
+      </p>
+
+      <p>
       A veces pienso en ti sin motivo, solo porque sí,
       y me descubro sonriendo.
-    </p>
+      </p>
 
-    <p>
+      <p>
       Eres alguien muy especial para mí. Quiero que sepas que te valoro,
-      te admiro y, sobre todo, te tengo un cariño enorme,
-      te amo mucho muchote.
-    </p>
+      te admiro y te amo mucho muchote.
+      </p>
 
-    <p>Con mucho cariño,</p>
-    <p>Isita 💌</p>
+      <p>Con mucho afecto,</p>
 
-    <button class="return-btn" onclick="nextScreen(1)">Volver</button>
+      <p>Isita 💌</p>
+
+    </div>
+
+    <button class="return-btn" onclick="nextScreen(1)">
+      Volver al inicio
+    </button>
+
   </div>
-</div>
 
-<script>
-function nextScreen(num) {
-  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-  document.getElementById("screen" + num).classList.add("active");
-}
-</script>
+  <script>
+    function nextScreen(num) {
+
+      document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+      });
+
+      document.getElementById("screen" + num).classList.add("active");
+
+    }
+  </script>
 
 </body>
 </html>
